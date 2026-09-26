@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1790260648715,
+      "tag": "0000_shallow_jack_power",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1790313499901,
+      "tag": "0001_bumpy_deadpool",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1790313579510,
+      "tag": "0002_chubby_ultimates",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1790355565955,
+      "tag": "0003_yummy_loners",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1790419568489,
+      "tag": "0004_grant_kasif_access",
+      "breakpoints": true
+    }
+  ]
+}

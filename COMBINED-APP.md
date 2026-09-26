@@ -1,11 +1,3 @@
-# Hypox Store + CRM
-
-Combined ecommerce storefront (`/`) and protected CRM (`/admin`).
-
-Hosted test: https://hypox-test.shamipos.chatgpt.site
-
-This private repository contains application source and migrations, not deployed database contents, uploaded customer data, or runtime secrets. Configure runtime values separately using `.env.example`.
-
 # Hypox: one codebase, two experiences
 
 This project combines the Hypox storefront and Hypox Control CRM into one application and one shared backend. The screens remain separate.
