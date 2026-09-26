@@ -1,10 +1,10 @@
 # Hypox Store + CRM
 
-Combined ecommerce storefront (`/`) and protected CRM (`/admin`).
+Combined storefront (`/`) and protected CRM (`/admin`).
 
-Hosted test: https://hypox-test.shamipos.chatgpt.site
+Hosted test: https://hypox-test.shamipos.chatgpt.site (sign-in required).
 
-This private repository contains application source and migrations, not deployed database contents, uploaded customer data, or runtime secrets. Configure runtime values separately using `.env.example`.
+Runtime secrets and deployed database contents are not included. Use `.env.example` for configuration. See SETUP.md for development details.
 
 # Hypox: one codebase, two experiences
 
@@ -54,15 +54,15 @@ drizzle/                   Additive database migrations
 1. Install dependencies with `npm ci` using the included lockfile.
 2. Copy `.env.example` to `.env` for development and set `CRM_OWNER_EMAIL` to the authorized owner's email. The bundled local ChatGPT sign-in uses `seedy@sites.test`; use that only in local development.
 3. Keep existing storefront payment/Google identity settings. Set `DEV_AUTH=false` and `APP_ENV=production` for production.
-4. Generate the deployment with `npm run build`. Apply local D1 migrations as described in the starter README; Sites applies production migrations during publishing.
+4. Generate the deployment with `npm run build`. Apply local D1 migrations as described in SETUP.md; Sites applies production migrations during publishing.
 5. Open `/admin`, sign in, and start with Sample workspace. The storefront and CRM now use the same D1/R2 bindings.
-6. For deployment to the existing Hypox store, reuse its preserved `.openai/hosting.json` identity. Do not deploy a public combined storefront with owner-only site access: protect `/admin` through its server authorization instead.
+6. For deployment to the existing Hypox store, use the original store's own `.openai/hosting.json` identity; this repository's manifest identifies the separate test site. Do not deploy a public combined storefront with owner-only site access: protect `/admin` through its server authorization instead.
 
 The existing storefront's public audience remains appropriate. The admin page and both admin endpoints verify identity and membership on every request. Only the configured owner can add or change team roles.
 
 ## Validation and delivery status
 
-The combined project passed TypeScript validation. Its route separation, imports and archive contents were checked. The final production build and end-to-end browser validation are still required: current machine permissions block the build's child processes. This combined version has not been deployed, and the live storefront is unchanged.
+The combined project passed TypeScript validation and its production build. The test site is deployed at https://hypox-test.shamipos.chatgpt.site with a separate database. Full end-to-end browser validation remains outstanding.
 
 ## Current MVP limits
 
